@@ -1,6 +1,6 @@
 # PDF Form Filler
 
-A FastAPI-based application to fill PDF forms with provided data and generate a new PDF file.
+A FastAPI-based application to fill given form with provided data and generate a new PDF file.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ A FastAPI-based application to fill PDF forms with provided data and generate a 
 - FastAPI
 - Uvicorn
 - python-docx
-- pdf2docx
+- docx2pdf
 
 
 ## Installation
@@ -16,14 +16,14 @@ A FastAPI-based application to fill PDF forms with provided data and generate a 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-repo/pdf-form-filler.git
+    git clone https://github.com/muskan9191/pdf-form-filler.git
     cd pdf-form-filler
     ```
 
 2. Install the required packages:
 
     ```bash
-    pip install fastapi uvicorn python-docx pdf2docx docx2pdf
+    pip install fastapi uvicorn python-docx docx2pdf
     ```
 
 ## Running the Application
@@ -39,7 +39,7 @@ uvicorn main:app --reload
 To test, update the below command values, open command prompt and run:
 
 ```bash
-curl -X POST "http://127.0.0.1:8000/generate-pdf/" -F "name=Muskan Madhwani" -F "address=12\24 Karol Bagh" -F "date=22 Jul 2024" -F "favourite_activities=Reading,Walking,Dancing" -F "favourite_activity=Dancing" -o filled_form.pdff
+curl -X POST "http://127.0.0.1:8000/fill-form/" -F "name=Muskan Madhwani" -F "address=12\24 Karol Bagh" -F "date=22 Jul 2024" -F "favourite_activities=Reading,Walking,Dancing" -F "favourite_activity=Walking" -o filled_form.pdf
 ```
 
 The output file will be stored in filled_form.pdf file
